@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, EventEmitter, Output} from "@angular/core";
 import {YouTubeService} from "../../services/youtube.service";
 import {Observable} from "rxjs";
 
@@ -7,19 +7,24 @@ import {Observable} from "rxjs";
 	moduleId: module.id,
 	templateUrl: 'videosearch.component.html',
 	styleUrls: ['videosearch.component.css'],
-	providers: [YouTubeService]
+	providers: [YouTubeService],
+	outputs: ['onSearch']
 })
 export class VideoSearchComponent {
 	
 	searchResults:Observable<any>;
+	onSearch: EventEmitter<any>
 	
-	constructor(private _youtubeService: YouTubeService){}
+	constructor(private _youtubeService: YouTubeService){
+		this.onSearch = new EventEmitter();
+	}
 	
 	youtubeSearch(query){
+		console.log('youtube search');
 		this._youtubeService.getAllVideos(query)
 			.subscribe(data => {
 				this.searchResults = data;
-				console.log(this.searchResults);
+				this.onSearch.emit(data);
 			})
 		
 	}

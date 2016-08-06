@@ -1,0 +1,6 @@
+<ul class="list-group">
+    <li class="clearfix list-group-item" *ngFor="let video of videos" (click)="onVideoSelect(video)">
+        <img class="col-md-4" [src]="video.snippet.thumbnails.default.url" alt="{{ video.snippet.title }}"/>
+        <p class="col-md-8">{{ video.snippet.title }}</p>
+    </li>
+</ul>
