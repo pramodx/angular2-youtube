@@ -3,9 +3,9 @@ import { enableProdMode } from '@angular/core';
 import { AppComponent, environment } from './app/';
 import {HTTP_PROVIDERS} from "@angular/http";
 
-if (environment.production) {
-  enableProdMode();
-}
+
+enableProdMode();
+
 
 bootstrap(AppComponent, HTTP_PROVIDERS);
 
