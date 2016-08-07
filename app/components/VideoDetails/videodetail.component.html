@@ -1,0 +1,7 @@
+<section>
+    <iframe width="853" height="480" [src]="getResourceUrl(selectedVideo.id.videoId)" frameborder="0" allowfullscreen ></iframe>
+</section>
+<section>
+    <h4>{{selectedVideo.snippet.title}}</h4>
+    <p><strong>Published: {{selectedVideo.snippet.publishedAt | date}}</strong><br>{{selectedVideo.snippet.description}}</p>
+</section>

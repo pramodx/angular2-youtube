@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <VideoSearch (onSearch)="setVideoList($event)"></VideoSearch>
+        </div>
+    </div>
+    <div class="row" *ngIf="selectedVideo" >
+        <div class="col-md-8">
+            <div class="wrapper">
+                <VideoDetail *ngIf="selectedVideo" [selectedVideo]="selectedVideo"></VideoDetail>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="wrapper">
+                <section>
+                    <VideoList (VideoSelect)="setSelectedVideo($event)" *ngIf="videos" [videos]="videos"></VideoList>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

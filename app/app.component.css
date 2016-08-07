@@ -1,0 +1,12 @@
+.container {
+  padding: 20px 0; }
+  .container .row {
+    margin-bottom: 20px; }
+
+section {
+  margin-bottom: 10px; }
+
+.wrapper {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px; }
